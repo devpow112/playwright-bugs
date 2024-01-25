@@ -1,0 +1,13 @@
+{
+  "name": "playwright-bugs",
+  "scripts": {
+    "normal-project-use": "playwright test --reporter ./reporter-project-use.js --config config.js",
+    "normal-project-fn": "playwright test --reporter ./reporter-project-fn.js --config config.js",
+    "issue-project-use": "playwright test --reporter blob --config config.js && playwright merge-reports --reporter ./reporter-project-use.js --config config.js ./blob-report/",
+    "issue-project-fn": "playwright test --reporter blob --config config.js && playwright merge-reports --reporter ./reporter-project-fn.js --config config.js ./blob-report/"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.41.1",
+    "playwright": "^1.41.1"
+  }
+}
