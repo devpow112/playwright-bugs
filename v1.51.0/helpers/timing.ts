@@ -12,6 +12,6 @@ export const minutes = (minutes: number): number => {
 	return seconds(minutes * 60);
 };
 
-export const sleep = (ms = 50) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
+export const sleep = (milliseconds: number) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
 };
