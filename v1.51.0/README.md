@@ -2,22 +2,18 @@
 
 ## Negative Durations
 
-Seems to affect `Linux` only.
-
-Run one of the following to reproduce.
+Seems to affect `Linux` only. Run one of the following to reproduce.
 
 * `test:negative-duration:chromium`
 * `test:negative-duration:firefox`
 * `test:negative-duration:webkit`
 
-There are also variants that only seem to occur when a test is interrupted.
-
-* `test:negative-duration:chromium:timeout`
-* `test:negative-duration:firefox:timeout`
-* `test:negative-duration:webkit:timeout`
-
 The output will include one of the following if there are negative durations
 reported.
 
-* `!!!!!!!!!!!! Negative test duration !!!!!!!!!!!!`
-* `!!!!!!!!!!!! Negative total duration !!!!!!!!!!!!`
+* If a negative duration is reported to the reporter via a `TestResult` within
+  the `onTestEnd()` callback
+  * `!!!!!!!!!!!! Negative test duration !!!!!!!!!!!!`
+* if a negative duration was reported to the reporter via a `FullResult` within
+  the `onEnd()` callback
+  * `!!!!!!!!!!!! Negative total duration !!!!!!!!!!!!`

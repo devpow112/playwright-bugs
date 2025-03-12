@@ -31,8 +31,3 @@ jobs:
         run: npm run test:negative-duration:$BROWSER
         env:
           BROWSER: ${{matrix.browser}}
-      - name: Run tests (timeout)
-        continue-on-error: true
-        run: npm run test:negative-duration:$BROWSER:timeout
-        env:
-          BROWSER: ${{matrix.browser}}
