@@ -9,6 +9,7 @@ jobs:
       run:
         working-directory: v1.51.0
     strategy:
+      fail-fast: false
       matrix:
         browser: [chromium, firefox, webkit]
     steps:
