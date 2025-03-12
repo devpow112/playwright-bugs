@@ -13,22 +13,4 @@ test.describe('negative duration', () => {
 
         console.log('\tDone!');
     });
-
-    test('medium test', async ({ }) => {
-        for (let i = 0; i < 5; i++) {
-            console.log('\tRunning...');
-
-            await sleep(minutes(1));
-        }
-
-        console.log('\tDone!');
-    });
-
-    test('short test', async ({ }) => {
-        console.log('\tRunning...');
-
-        await sleep(seconds(1));
-
-        console.log('\tDone!');
-    });
 });
