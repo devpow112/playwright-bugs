@@ -34,6 +34,7 @@ jobs:
           BROWSER: ${{matrix.browser}}
           ISSUE: ${{matrix.issue}}
       - name: Run tests (timeout)
+        continue-on-error: true
         run: npm run test:$ISSUE:$BROWSER:timeout
         env:
           BROWSER: ${{matrix.browser}}

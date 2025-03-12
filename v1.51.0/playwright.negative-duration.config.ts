@@ -9,8 +9,7 @@ export default defineConfig({
     workers: 1,
     reporter: [
         ['list'],
-        ['blob'],
-        ['./reporter.ts'],
+        ['./negative-duration-reporter.ts'],
     ],
     use: {
         screenshot: 'only-on-failure',
