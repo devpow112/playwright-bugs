@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { minutes, seconds } from './helpers/timing.ts';
+import { minutes } from './helpers/timing.ts';
 
 export default defineConfig({
     testDir: './test/',
@@ -10,13 +10,12 @@ export default defineConfig({
     workers: 1,
     reporter: [
         ['list'],
-        ['./negative-duration-reporter.ts'],
+        ['./negative-duration-reporter.ts']
     ],
     use: {
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
-        trace: 'retain-on-failure',
-        timezoneId: 'America/New_York',
+        trace: 'retain-on-failure'
     },
     projects: [{
         name: 'chromium',
