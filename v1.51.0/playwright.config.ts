@@ -6,7 +6,7 @@ export default defineConfig({
     fullyParallel: true,
     forbidOnly: true,
     retries: 2,
-    workers: 3,
+    workers: 1,
     reporter: [
         ['list'],
         ['blob'],
