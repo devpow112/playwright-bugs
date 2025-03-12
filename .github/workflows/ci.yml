@@ -2,7 +2,7 @@ name: Test
 on: push
 jobs:
   test-isolated:
-    name: 1.51.1 Bugs
+    name: 1.51.0 Bugs
     runs-on: ubuntu-latest
     defaults:
       run:
