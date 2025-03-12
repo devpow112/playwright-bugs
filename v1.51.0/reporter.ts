@@ -5,7 +5,7 @@ export default class NegativeDurationReporter implements Reporter {
         const { duration } = result;
 
         if (duration < 0) {
-            console.log(`!!!!!!!!!!!! Negative test duration !!!!!!!!!!!!`);
+            console.log('!!!!!!!!!!!! Negative test duration !!!!!!!!!!!!');
         }
     }
 
@@ -13,7 +13,7 @@ export default class NegativeDurationReporter implements Reporter {
         const { duration } = result;
 
         if (duration < 0) {
-            console.log(`!!!!!!!!!!!! Negative total duration !!!!!!!!!!!!`);
+            console.log('!!!!!!!!!!!! Negative total duration !!!!!!!!!!!!');
         }
     }
 }

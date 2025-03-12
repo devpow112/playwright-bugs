@@ -12,6 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         browser: [chromium, firefox, webkit]
+        issue: [negative-duration]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,6 +29,10 @@ jobs:
         env:
           BROWSER: ${{matrix.browser}}
       - name: Run tests
-        run: npx playwright test --project "$BROWSER"
+        run: npm run test:$BROWSER
+        env:
+          BROWSER: ${{matrix.browser}}
+      - name: Run tests (timeout)
+        run: npm run test:$BROWSER:timeout
         env:
           BROWSER: ${{matrix.browser}}
