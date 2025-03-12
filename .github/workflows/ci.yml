@@ -4,10 +4,10 @@ jobs:
   test-isolated:
     name: 1.51.0 Bugs
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     defaults:
       run:
         working-directory: v1.51.0
-    timeout-minutes: 90
     steps:
       - name: Checkout
         uses: actions/checkout@v4
