@@ -6,7 +6,7 @@
     "test:negative-duration:firefox": "playwright test --config ./playwright.negative-duration.config.ts --project firefox",
     "test:negative-duration:firefox:timeout": "playwright test --config ./playwright.negative-duration.config.ts --project firefox --global-timeout 2100000",
     "test:negative-duration:webkit": "playwright test --config ./playwright.negative-duration.config.ts --project webkit",
-    "test:negative-duration:webkit:timeout": "playwright test --config ./playwright.negative-duration.config.ts --project webkit --global-timeout 2100000",
+    "test:negative-duration:webkit:timeout": "playwright test --config ./playwright.negative-duration.config.ts --project webkit --global-timeout 2100000"
   },
   "dependencies": {
     "@playwright/test": "1.51.0",
