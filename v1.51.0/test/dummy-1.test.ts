@@ -6,9 +6,9 @@ test.describe('dummy 1', () => {
 
     test.beforeEach(async () => { await sleep(seconds(5)); });
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
         test(`test ${i + 1}`, async ({ }) => {
-            await sleep(minutes(2));
+            await sleep(minutes(1));
         });
     }
 
