@@ -1,5 +1,5 @@
-name: CI
-on: pull_request
+name: Test
+on: push
 jobs:
   test-isolated:
     name: 1.51.1 Bugs
