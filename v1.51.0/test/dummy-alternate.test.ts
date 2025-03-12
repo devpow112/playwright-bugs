@@ -6,7 +6,7 @@ test.describe('dummy suite, alternate', () => {
 
     test.beforeEach(async () => { await sleep(seconds(5)); });
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 15; i++) {
         test(`dummy test ${i + 1}`, async ({ }, testInfo) => {
             await sleep(minutes(1));
         });
