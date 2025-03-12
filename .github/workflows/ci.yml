@@ -4,6 +4,9 @@ jobs:
   test-isolated:
     name: 1.51.1 Bugs
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: v1.51.0
     timeout-minutes: 90
     steps:
       - name: Checkout
@@ -11,15 +14,12 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache-dependency-path: v1.51.1
+          node-version: v1.51.0/.nvmrc
+          cache-dependency-path: v1.51.0/package-lock.json
           cache: npm
       - name: Install dependencies
-        working-directory: v1.51.1
         run: npm ci
       - name: Setup playwright
-        working-directory: v1.51.1
         run: npx playwright install --with-deps
       - name: Run tests
-        working-directory: v1.51.1
         run: npx playwright test
