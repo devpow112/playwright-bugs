@@ -29,10 +29,12 @@ jobs:
         env:
           BROWSER: ${{matrix.browser}}
       - name: Run tests
-        run: npm run test:$BROWSER
+        run: npm run test:$ISSUE:$BROWSER
         env:
           BROWSER: ${{matrix.browser}}
+          ISSUE: ${{matrix.issue}}
       - name: Run tests (timeout)
-        run: npm run test:$BROWSER:timeout
+        run: npm run test:$ISSUE:$BROWSER:timeout
         env:
           BROWSER: ${{matrix.browser}}
+          ISSUE: ${{matrix.issue}}
