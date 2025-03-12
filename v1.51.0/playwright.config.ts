@@ -20,7 +20,7 @@ export default defineConfig({
         timezoneId: 'America/New_York',
     },
     projects: [{
-        name: 'chrome',
+        name: 'chromium',
         use: { ...devices['Desktop Chrome'] },
     }, {
         name: 'firefox',
