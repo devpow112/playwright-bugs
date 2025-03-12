@@ -26,7 +26,7 @@ export default defineConfig({
         name: 'firefox',
         use: { ...devices['Desktop Firefox'] },
     }, {
-        name: 'safari',
+        name: 'webkit',
         use: { ...devices['Desktop Safari'] },
     }],
     timeout: minutes(5),
