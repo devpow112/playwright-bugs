@@ -1,8 +1,8 @@
 name: Test
 on: push
 jobs:
-  v1-51-0-bugs:
-    name: v1.51.0 Bugs
+  v1-51-0-negative-duration:
+    name: v1.51.0 Bugs (Negative Duration)
     runs-on: ubuntu-latest
     timeout-minutes: 90
     defaults:
@@ -12,7 +12,6 @@ jobs:
       fail-fast: false
       matrix:
         browser: [chromium, firefox, webkit]
-        issue: [negative-duration]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,13 +28,11 @@ jobs:
         env:
           BROWSER: ${{matrix.browser}}
       - name: Run tests
-        run: npm run test:$ISSUE:$BROWSER
+        run: npm run test:negative-duration:$BROWSER
         env:
           BROWSER: ${{matrix.browser}}
-          ISSUE: ${{matrix.issue}}
       - name: Run tests (timeout)
         continue-on-error: true
-        run: npm run test:$ISSUE:$BROWSER:timeout
+        run: npm run test:negative-duration:$BROWSER:timeout
         env:
           BROWSER: ${{matrix.browser}}
-          ISSUE: ${{matrix.issue}}
