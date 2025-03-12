@@ -1,13 +1,16 @@
 name: Test
 on: push
 jobs:
-  test-isolated:
-    name: 1.51.0 Bugs
+  v1-51-0-bugs:
+    name: v1.51.0 Bugs
     runs-on: ubuntu-latest
     timeout-minutes: 90
     defaults:
       run:
         working-directory: v1.51.0
+    strategy:
+      matrix:
+        browser: [chromium, firefox, webkit]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,6 +23,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Setup playwright
-        run: npx playwright install --with-deps
+        run: npx playwright install "$BROWSER" --with-deps
+        env:
+          BROWSER: ${{matrix.browser}}
       - name: Run tests
-        run: npx playwright test
+        run: npx playwright test --project "$BROWSER"
+        env:
+          BROWSER: ${{matrix.browser}}
