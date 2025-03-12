@@ -7,7 +7,7 @@
     "issue-project-fn": "playwright test --reporter blob --config config.js && playwright merge-reports --reporter ./reporter-project-fn.js --config config.js ./blob-report/"
   },
   "dependencies": {
-    "@playwright/test": "^1.41.1",
-    "playwright": "^1.41.1"
+    "@playwright/test": "1.41.1",
+    "playwright": "1.41.1"
   }
 }

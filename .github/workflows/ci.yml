@@ -1,0 +1,25 @@
+name: CI
+on: pull_request
+jobs:
+  test-isolated:
+    name: 1.51.1 Bugs
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@
+      - name: Set up node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts
+          cache-dependency-path: v1.51.1
+          cache: npm
+      - name: Install dependencies
+        working-directory: v1.51.1
+        run: npm ci
+      - name: Setup playwright
+        working-directory: v1.51.1
+        run: npx playwright install --with-deps
+      - name: Run tests
+        working-directory: v1.51.1
+        run: npx playwright test
