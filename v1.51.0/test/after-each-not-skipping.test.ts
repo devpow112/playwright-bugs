@@ -20,7 +20,11 @@ test.beforeEach(() => {
     console.log('beforeEach');
 });
 
-test('skipped', () => {
+test('skipped 1', () => {
+    console.log('test');
+});
+
+test('skipped 2', () => {
     console.log('test');
 });
 
