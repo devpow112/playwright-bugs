@@ -3,7 +3,8 @@
   "scripts": {
     "test:negative-duration:chromium": "playwright test --config ./playwright.negative-duration.config.ts --project chromium",
     "test:negative-duration:firefox": "playwright test --config ./playwright.negative-duration.config.ts --project firefox",
-    "test:negative-duration:webkit": "playwright test --config ./playwright.negative-duration.config.ts --project webkit"
+    "test:negative-duration:webkit": "playwright test --config ./playwright.negative-duration.config.ts --project webkit",
+    "test:after-each-not-skipping": "playwright test --config ./playwright.after-each-not-skipping.config.ts"
   },
   "dependencies": {
     "@playwright/test": "1.51.0",
