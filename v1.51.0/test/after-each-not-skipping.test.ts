@@ -6,7 +6,9 @@ type Fixtures = {
 
 const test = base.extend<Fixtures>({
     dummy: [async ({ }, use, testInfo) => {
-        testInfo.skip();
+        if (testInfo.title === 'skipped') {
+            testInfo.skip();
+        }
 
         await use();
     }, { auto: true }]
@@ -20,11 +22,15 @@ test.beforeEach(() => {
     console.log('beforeEach');
 });
 
-test('skipped 1', () => {
+test('run 1', () => {
     console.log('test');
 });
 
-test('skipped 2', () => {
+test('skipped', () => {
+    console.log('test');
+});
+
+test('run 2', () => {
     console.log('test');
 });
 
